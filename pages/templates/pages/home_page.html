@@ -6,8 +6,9 @@
 
 {% block content %}
     <h1>Home Page</h1>
-    {% if user.is_authentication %}
-        <p>welcome {{ user.username }}</p> |
+    {% if user.is_authenticated %}
+        <p>welcome {{ user.username }}</p>|
+
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="logout">
